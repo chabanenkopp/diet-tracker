@@ -1,0 +1,38 @@
+{
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ]
+      },
+    }
+  },
+  "extends": [
+    "react-app",
+    "airbnb",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "semi": [
+      2,
+      "never"
+    ],
+    "arrow-body-style": [
+      "error",
+      "as-needed"
+    ],
+    "react/jsx-filename-extension": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "react/require-default-props": 0,
+    "react/forbid-prop-types": 0,
+    "react/jsx-wrap-multilines": 0,
+    "react/jsx-indent": [
+      "error",
+      2
+    ],
+  }
+}
