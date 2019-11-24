@@ -1,4 +1,5 @@
 import React from 'react'
+import { animated, useSpring } from 'react-spring'
 import styled from 'styled-components'
 import { Box, Flex } from 'components/atoms/Layout'
 import { Text } from 'components/atoms/Typography'
@@ -16,20 +17,25 @@ const TextContainer = styled.div`
   transform: translate(-50%, -50%);
 `
 
-const Circle = () => (
-  <Flex>
-    <Box m="0 auto" position="relative">
-      <Shape src={shape} />
-      <TextContainer>
-        <Text fontSize="xxl" color={COLORS.WHITE} textAlign="center">
-          111
-        </Text>
-        <Text fontSize="xxl" color={COLORS.WHITE}>
-          Diets
-        </Text>
-      </TextContainer>
-    </Box>
-  </Flex>
-)
+const Circle = () => {
+  const spring = useSpring({ from: { val: 0 }, to: { val: 111 } })
+  return (
+    <Flex>
+      <Box m="0 auto" position="relative">
+        <Shape src={shape} />
+        <TextContainer>
+          <Text fontSize="xxl" color={COLORS.WHITE} textAlign="center">
+            <animated.div>
+              {spring.val.interpolate((val) => Math.floor(val))}
+            </animated.div>
+          </Text>
+          <Text fontSize="xxl" color={COLORS.WHITE}>
+            Diets
+          </Text>
+        </TextContainer>
+      </Box>
+    </Flex>
+  )
+}
 
 export default Circle
