@@ -58,7 +58,7 @@ const LoginForm = ({
       fontWeight={fontWeights.semi_bold}
       mb="m"
     >
-      Log In to Diet Tracker
+      Log in to Diet tracker
     </Text>
     <Flex alignItems="center" justifyContent="center">
       <Box>

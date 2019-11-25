@@ -36,6 +36,8 @@ export default class WeightSlider extends Component {
     e.preventDefault()
     const { weight } = this.state
     const { email } = this.props
+    this.setState({ isSuccess: true })
+    this.handleToggleModal()
     weightService
       .postWeight(weight, email)
       .then((resp) => {

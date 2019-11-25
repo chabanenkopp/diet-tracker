@@ -20,7 +20,6 @@ const Input = styled.input`
   }
   ::placeholder {
     color: ${COLORS.LUXURY};
-    font-family: Lato;
     font-size: ${theme.fontSizes.m};
   }
   border: ${border};

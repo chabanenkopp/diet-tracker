@@ -9,7 +9,7 @@ import googleIcon from 'assets/images/google-logo.svg'
 
 const GoogleButtonContainer = styled(Flex)`
   align-items: center;
-  background-color: ${COLORS.ARAGON_GREEN};
+  background-color: ${COLORS.GREEN_LINE};
   border-radius: ${radius.m};
   transition: background-color 0.5s;
   cursor: pointer;
@@ -34,7 +34,7 @@ const googleSignIn = () => {
 }
 
 const GoogleForm = () => (
-  <GoogleButtonContainer bg={COLORS.ARAGON_GREEN} alignItems="center">
+  <GoogleButtonContainer bg={COLORS.GREEN_LINE} alignItems="center">
     <GoogleIconWrapper>
       <GoogleIcon src={googleIcon} />
     </GoogleIconWrapper>

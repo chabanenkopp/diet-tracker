@@ -30,9 +30,25 @@ const imageService = new ImageService()
 
 export default class ImageUpload extends Component {
   state = {
-    base64: '',
+    base: null,
     isModalOpen: false,
     isSuccess: false,
+  }
+
+  handleSubmitForm = (e) => {
+    e.preventDefault()
+    const { base } = this.state
+    const { email } = this.props
+    this.setState({ isSuccess: true })
+    this.handleToggleModal()
+    imageService
+      .postImage(base, email)
+      .then((resp) => {
+        this.setState({ isSuccess: true })
+        this.handleToggleModal()
+        console.log(resp)
+      })
+      .catch((err) => console.log(err))
   }
 
   handleOnChange = (e) => {
@@ -42,7 +58,7 @@ export default class ImageUpload extends Component {
     reader.readAsDataURL(file)
     reader.onloadend = () => {
       this.setState({
-        base64: reader.result,
+        base: reader.result,
       })
     }
   }
@@ -51,20 +67,6 @@ export default class ImageUpload extends Component {
     this.setState(({ isModalOpen }) => ({
       isModalOpen: !isModalOpen,
     }))
-  }
-
-  handleSubmitForm = (e) => {
-    e.preventDefault()
-    const { base64 } = this.state
-    const { email } = this.props
-    imageService
-      .postImage(base64, email)
-      .then((resp) => {
-        this.setState({ isSuccess: true })
-        this.handleToggleModal()
-        console.log(resp)
-      })
-      .catch((err) => console.log(err))
   }
 
   render() {

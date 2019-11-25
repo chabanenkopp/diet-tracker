@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { space, height, fontSize } from 'styled-system'
-import { theme, radius } from 'Theme'
+import { theme } from 'Theme'
 import { pxToRem } from 'helpers'
 import { COLORS } from 'constants/constants'
 
@@ -49,7 +49,7 @@ Outlined.propTypes = {
 }
 
 Outlined.defaultProps = {
-  borderColor: COLORS.ARAGON_GREEN,
+  borderColor: COLORS.VISTA_BLUE,
   color: COLORS.ENAMELLED_DRAGON,
 }
 

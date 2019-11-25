@@ -58,7 +58,7 @@ const RegistrationForm = ({
       fontWeight={fontWeights.semi_bold}
       mb="m"
     >
-      Sign up for Diet Tracker
+      Sign up for Diet tracker
     </Text>
     <Flex alignItems="center" justifyContent="center">
       <Box>

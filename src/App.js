@@ -14,6 +14,7 @@ import AuthServiceProvider, {
 import loading from 'assets/images/loading-dots.svg'
 import favicon from 'assets/favicon.ico'
 import Clock from 'routes/Clock'
+// import Detail from 'routes/Detail'
 
 const { LOGIN, REGISTER, DASHBOARD } = ROUTES
 
@@ -70,6 +71,7 @@ class App extends React.Component {
                   ) : (
                     <Switch>
                       <Route
+                        exact
                         path={`/${DASHBOARD}`}
                         render={({ match }) => (
                           <Dashboard
@@ -81,6 +83,19 @@ class App extends React.Component {
                           />
                         )}
                       />
+                      {/* <Route
+                        path="/dashboard/:id?"
+                        render={({ match }) => (
+                          <Detail
+                            path={match.path}
+                            isSliderVisible={isSliderVisible}
+                            handleToggleMobileMenuClick={
+                              this.handleToggleMobileMenuClick
+                            }
+                          />
+                        )}
+                        exact
+                      /> */}
                       <Route
                         path="/clock"
                         render={({ match }) => (

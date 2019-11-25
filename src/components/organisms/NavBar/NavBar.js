@@ -29,6 +29,8 @@ const LinksContainer = styled(Flex)`
   border-radius: ${pxToRem(40)};
   background-color: ${transparentize(0.05, COLORS.VISTA_BLUE)};
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  max-width: 500px;
+  margin-top: ${pxToRem(30)};
 `
 
 const ReactLink = styled(Link)`
@@ -40,20 +42,22 @@ const Container = styled(Box)`
   width: 100%;
   min-height: ${pxToRem(55)};
   z-index: 1;
+`
+
+const LinksWrapper = styled(Flex)`
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   bottom: 0;
+  z-index: 2;
+  height: ${pxToRem(90)};
+  width: 100%;
 `
 
 const NavBar = ({ path }) => (
   <Container>
-    <Box
-      flex="none"
-      justifyContent="space-between"
-      alignItems="center"
-      position="fixed"
-      zIndex="2"
-      height={pxToRem(90)}
-      width="100%"
-    >
+    <LinksWrapper>
       <LinksContainer>
         <BorderBottom targetPath="/dashboard" currentPath={path}>
           <ReactLink to="/dashboard">
@@ -82,7 +86,7 @@ const NavBar = ({ path }) => (
           </ReactLink>
         </BorderBottom>
       </LinksContainer>
-    </Box>
+    </LinksWrapper>
   </Container>
 )
 

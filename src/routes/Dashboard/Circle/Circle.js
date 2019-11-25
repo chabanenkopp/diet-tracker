@@ -12,7 +12,7 @@ const Shape = styled.img`
 
 const TextContainer = styled.div`
   position: absolute;
-  top: 40%;
+  top: 44%;
   left: 50%;
   transform: translate(-50%, -50%);
 `
@@ -25,9 +25,9 @@ const Circle = () => {
         <Shape src={shape} />
         <TextContainer>
           <Text fontSize="xxl" color={COLORS.WHITE} textAlign="center">
-            <animated.div>
+            <animated.span>
               {spring.val.interpolate((val) => Math.floor(val))}
-            </animated.div>
+            </animated.span>
           </Text>
           <Text fontSize="xxl" color={COLORS.WHITE}>
             Diets
